@@ -170,7 +170,7 @@
 
 :root {
     --primary: #25316D;
-    --secondary: #2B9BFF;
+    --secondary: #1170c4;
     --light: #EFFDF5;
     --dark: #25316d;
 }
@@ -268,7 +268,7 @@
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 @media (max-width: 991.98px) {
