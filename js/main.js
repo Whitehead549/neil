@@ -57,10 +57,8 @@
     document.addEventListener('DOMContentLoaded', (event) => {
         const playButton = document.querySelector('#playButton');
         const video = document.querySelector('#myVideo');
-        const videoSection = document.querySelector('#videoSection');
-        const textSection = document.querySelector('#textSection');
         
-        if (playButton && video && videoSection && textSection) {
+        if (playButton && video) {
             playButton.addEventListener('click', () => {
                 if (video.paused) {
                     video.play();
@@ -71,20 +69,28 @@
                 }
             });
 
-            // Add event listeners for both video and text sections
-            function handlePlayPause() {
-                if (video.paused) {
-                    playButton.click();
-                }
-            }
+            // IntersectionObserver to play/pause video when in/out of view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (video.paused) {
+                            video.play();
+                            playButton.textContent = 'Pause Video';
+                        }
+                    } else {
+                        if (!video.paused) {
+                            video.pause();
+                            playButton.textContent = 'Play Video';
+                        }
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of the video is in view
 
-            videoSection.addEventListener('click', handlePlayPause);
-            textSection.addEventListener('click', handlePlayPause);
+            observer.observe(video);
         } else {
-            console.error('Play button, video element, video section, or text section not found');
+            console.error('Play button or video element not found');
         }
     });
-
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
