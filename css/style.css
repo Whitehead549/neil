@@ -666,3 +666,8 @@
     }
 }
 
+
+/* video css */
+#playButton {
+    display: none; /* Hides the button */
+}

@@ -53,6 +53,37 @@
             '<i class="bi bi-chevron-right"></i>'
         ]
     });
+    
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const playButton = document.querySelector('#playButton');
+        const video = document.querySelector('#myVideo');
+        const videoSection = document.querySelector('#videoSection');
+        const textSection = document.querySelector('#textSection');
+        
+        if (playButton && video && videoSection && textSection) {
+            playButton.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playButton.textContent = 'Pause Video';
+                } else {
+                    video.pause();
+                    playButton.textContent = 'Play Video';
+                }
+            });
+
+            // Add event listeners for both video and text sections
+            function handlePlayPause() {
+                if (video.paused) {
+                    playButton.click();
+                }
+            }
+
+            videoSection.addEventListener('click', handlePlayPause);
+            textSection.addEventListener('click', handlePlayPause);
+        } else {
+            console.error('Play button, video element, video section, or text section not found');
+        }
+    });
 
 
     // Testimonials carousel

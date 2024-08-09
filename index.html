@@ -206,25 +206,19 @@
 
 <!-- About Start -->
 <div class="container-xxl py-5">
-    <div class="container">
+    <div class="container" id="controller">
         <div class="row g-5 align-items-center">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                <div class="row g-0 about-bg rounded overflow-hidden">
-                    <div class="col-6 text-start" >
-                        <img class="img-fluid w-100" src="img/about-1.jpg" style="width: 100%;">
-                    </div>
-                    <div class="col-6 text-start ">
-                        <img class="img-fluid" src="img/about-2.jpg" style="width: 100%; margin-top: 15%;">
-                    </div>
-                    <div class="col-6 text-start" >
-                        <img class="img-fluid" src="img/about-3.jpg" style="width: 100%; ">
-                    </div>
-                    <div class="col-6 text-end pb-3" >
-                        <img class="img-fluid w-100" src="img/about-4.jpg" style="width: 100%;">
-                    </div>
-                </div>
+            <!-- Video Section -->
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="videoSection">
+                <video id="myVideo" class="w-100" controls>
+                    <source src="/img/Advert.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button id="playButton">Play Video</button>
             </div>
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+            
+            <!-- Text Section -->
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" id="textSection">
                 <h1 class="mb-4">Empower Your Career Journey with Genixium!</h1>
                 <p class="mb-4">At Genixium, we believe in empowering your career journey! We provide talented individuals like you with part-time and remote opportunities that fit your unique needs and aspirations, helping you thrive in today's dynamic work environment.</p>
                 <p><i class="fa fa-check text-primary me-3"></i>Onboarding Training: Our intensive training period, available to those whose resumes and qualifications meet our requirements, lasts for two weeks to a month, with daily sessions designed to quickly bring new employees up to speed</p>
